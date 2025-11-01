@@ -6,7 +6,7 @@ BASE = "https://www.aramisauto.com/achat/"
 NB_PAGES = 10
 NBSP = "\u00A0"
 
-# ========= Nettoyage & parsing communs =========
+
 EMOJI_RE = re.compile(
     "["                             # blocs emoji/pictos fréquents
     "\U0001F1E6-\U0001F1FF"         # drapeaux
@@ -72,7 +72,6 @@ def guess_fuel_details(txt: str | None):
 
 # ========= Helpers Playwright =========
 async def handle_cookies(page):
-    # boutons les plus fréquents
     for label in ["Tout accepter","Accepter","Continuer sans accepter",
                   "J'accepte","Je comprends","OK"]:
         try:
@@ -80,7 +79,6 @@ async def handle_cookies(page):
             return
         except Exception:
             pass
-    # CMP en iframe éventuelle
     try:
         for f in page.frames:
             name_url = (f.name() or "") + " " + (f.url or "")
@@ -97,8 +95,8 @@ async def handle_cookies(page):
 async def wait_for_cards(page):
     sels = [
         'div.results div.list > div.item a[href^="/voitures/"]',
-        'div.list > div.item .product-card-content',  # fallback
-        'a.product-card'                               # très large
+        'div.list > div.item .product-card-content', 
+        'a.product-card'                               
     ]
     for _ in range(8):
         for sel in sels:
@@ -147,7 +145,6 @@ async def scrape_list_page(page, page_num: int):
 
     await wait_for_cards(page)
 
-    # on lit les conteneurs complets
     cards = page.locator('div.results div.list > div.item')
     if await cards.count() == 0:
         cards = page.locator('div.list > div.item')
@@ -157,7 +154,6 @@ async def scrape_list_page(page, page_num: int):
     for i in range(n):
         item = cards.nth(i)
 
-        # met la carte en vue -> hydrate price-wrapper
         try:
             await item.scroll_into_view_if_needed(timeout=1200)
             await asyncio.sleep(0.05)
@@ -170,7 +166,7 @@ async def scrape_list_page(page, page_num: int):
 
         title = await _txt(item, 'span.product-card-vehicle-information__title') or await _txt(item, 'h3')
 
-        # détails (optionnel, inchangé)
+        # details
         details_light  = await _txt(item, 'span.product-card-vehicle-information__details--light')
         details_medium = await _txt(item, 'span.product-card-vehicle-information__details.text-xs--medium')
         details = " • ".join([t for t in (details_light, details_medium) if t])
@@ -179,23 +175,21 @@ async def scrape_list_page(page, page_num: int):
         year, km, condition = parse_bottom(bottom)
         fuel, gearbox = guess_fuel_details(details)
 
-        # ====== PRIX AVANT REMISE UNIQUEMENT ======
-        # Sélecteurs robustes pour le prix barré
+
         price_striked_txt = await _text_of_first(
             item,
             [
-                'span.price-striked',                                   # <span class="price-striked">34 520 €</span>
+                'span.price-striked',                                   
                 'li.product-card-price__manufacturer-price .price-striked',
                 'div.price-wrapper .price-striked'
             ],
             timeout=2500
         )
-        price_eur = price_to_int(price_striked_txt)  # <- on renvoie ce prix uniquement
+        price_eur = price_to_int(price_striked_txt)
 
         rows.append({
             "title": strip_emojis(title),
-            "url": url,
-            "price_eur": price_eur,         # <-- AVANT REMISE
+            "price_eur": price_eur,
             "currency": "EUR",
             "year": year,
             "kilometers": km,
