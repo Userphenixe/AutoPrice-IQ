@@ -1,0 +1,9 @@
+# Fichiers générés par les pipelines ETL
+ETL/data/*.csv
+
+# Fichiers temporaires
+__pycache__/
+*.pyc
+
+# Fichiers spécifiques à VS Code
+.vscode/
