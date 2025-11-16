@@ -1,9 +1,13 @@
 import asyncio, re
 from urllib.parse import urljoin
+from pathlib import Path
 from playwright.async_api import async_playwright, TimeoutError as PWTimeout
+import pandas as pd
 
 BASE = "https://www.autoeasy.fr/"
 NBSP = "\u00A0"
+BASE_DIR = Path(__file__).resolve().parents[1]      # .../AUTOPRICE-IQ/ETL
+DEST_FILE = BASE_DIR / 'data' / 'autoeasy.csv'     # .../AUTOPRICE-IQ/ETL/data/autoeasy.csv
 
 EMOJI_RE = re.compile(
     "["                             # blocs emoji/pictos fréquents
@@ -186,6 +190,14 @@ async def scrape_by_clicking(page, max_turns=200):
 
     return rows
 
+async def load_to_csv(rows):
+    df = pd.DataFrame(rows)
+    try:
+        df.to_csv(DEST_FILE, index=True, index_label='id')
+        print('File Loaded Successfully !')
+    except:
+        print('Error while loading !')
+
 # ===== Runner =====
 async def main():
     async with async_playwright() as p:
@@ -203,6 +215,8 @@ async def main():
         )
         page = await context.new_page()
 
+        all_rows = []
+
         print("===== Autoeasy — Carrousel d’annonces en page d’accueil =====")
         try:
             rows = await scrape_autoeasy_home(page)
@@ -210,9 +224,13 @@ async def main():
             print(f"[WARN] Fallback par clic: {e}")
             rows = await scrape_by_clicking(page)
 
+        all_rows.extend(rows)
+
         for r in rows:
             print(f"- {r['title']} | {r['price_eur']} | {r['year']} | "
                   f"{r['kilometers']} km | {r['fuel']} | {r['gearbox']}")
+            
+        await load_to_csv(all_rows)
 
         await browser.close()
 

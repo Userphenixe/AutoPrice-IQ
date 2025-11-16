@@ -1,0 +1,337 @@
+id,title,price_eur,year,kilometers,fuel,gearbox,location
+0,Renault Clio 1.0 TCe 90ch Equilibre,15499,2023,23889,Essence,Manuelle,Metz 57000
+1,BMW SERIE 4 GRAN COUPE F36 420d 190ch BVA8 Lounge / Entretien BMW,15490,2017,182000,Diesel,Automatique,Béziers 34500
+2,Audi A3 TFSI,12900,2018,124,Essence,Manuelle,Heyrieux 38540
+3,Lexus RX450h IV 313cv Luxe pack techno,26000,2017,168500,Hybride,Automatique,Bouc-Bel-Air 13320
+4,Mercedes classe a,26000,2021,45144,Diesel,Automatique,Marseille 13012 12e Arrondissement
+5,OPEL GRANDLAND X 1.5 CDTI 130CH BVA8 Edition Business,11990,2019,137500,Diesel,Automatique,Chaponost 69630
+6,PORSCHE CAYMAN R 3.4i 330 PDK - Chrono - Immat France,58990,2011,93000,Essence,Automatique,Chaponost 69630
+7,BMW X1 18d 150 ch BVA8 XDrive Xline Suivi BMW,18490,2018,144200,Diesel,Automatique,Chaponost 69630
+8,MERCEDES GLE 500e hybride rechargeable 442 ch 4-Matic Fascination Suivi Mercedes,27490,2017,147500,Hybride,Automatique,Chaponost 69630
+9,JEEP RENEGADE 1.3 GSE 240 CH 4xe eAWD Trailhawk,23490,2022,62000,Hybride Rechargeable,Automatique,Chaponost 69630
+10,Renault Clio IV Édition Limited,6500,2015,47000,Essence,Manuelle,Pau 64000
+11,SCENIC RXE 1.6 16V essence,2750,2000,109500,Essence,Manuelle,Saint-Étienne 42000
+12,Peugeot 2008,12250,2021,120580,Essence,Automatique,Montreuil 93100
+13,Audi rs3 400 ch,47500,2019,68000,Essence,Automatique,Saint-Rémy-de-Provence 13210
+14,Ds3,3700,2012,254000,Diesel,Manuelle,Aubière 63170
+15,207 1.4,1000,2006,230000,Essence,Manuelle,Sarreguemines 57200
+16,"Mercedes GLB 200d AMG Line – 2024 – Toit pano, Caméra 360°, État neuf",52900,2024,13000,Diesel,Automatique,Nice 06300
+17,Av qashqai,4900,2011,250000,Diesel,Manuelle,Gaillac 81600
+18,Opel mokka,9950,2013,80200,Diesel,Manuelle,Rouen 76000
+19,Porsche 911 3.2 Targa 1986 historique,76900,1986,136000,Essence,Manuelle,Saint-Cyr-au-Mont-d'Or 69450
+20,Clio 3 à vendre dans l’état,1100,2009,267580,Diesel,Manuelle,Lille 59000
+21,Fiat punto (endommager),700,2011,270000,Diesel,Manuelle,Angoulême 16000
+22,Clio 4,5800,2012,153971,Essence,Manuelle,Sannois 95110
+23,Mercedes glb amg line 200d 8g- dct,36500,2021,100000,Diesel,Automatique,Le Lamentin 97232
+24,Audi A3 sportback 35 TDI 150 S tronic 7 S Line,31500,2022,38000,Diesel,Automatique,Arpajon 91290
+25,BMW X3- E83 - 3.0D - 204CV confort,6990,2005,189100,Diesel,Manuelle,Chavagne 35310
+26,Renault Twingo II 16V 1.2 Essence 75 CV DIN très propre,3990,2011,160000,Essence,Manuelle,Dijon 21000
+27,Peugeot 5008 1.6 hdi,5400,2010,231000,Diesel,Automatique,Pontoise 95300
+28,Peugeot 308 pack style 1.6l 120 chv,8300,2017,177500,Diesel,Manuelle,Verdun 55100
+29,Porsche 924 turbo 1981 à restaurer,5995,1981,98000,Essence,Manuelle,Réhon 54430
+30,Peugeot 1007,1800,2006,168000,Diesel,Manuelle,Douzens 11700
+31,VOLKSWAGEN Polo IV Phase 2 1.4 TDi,3400,2009,186000,Diesel,Manuelle,Le Pré-Saint-Gervais 93310
+32,Volkswagen Polo 6 – 1.0 80 ch – 2019,12950,2019,105000,Essence,Manuelle,Digoin 71160
+33,Renault Clio 4,7400,2018,157000,Diesel,Manuelle,Meaux 77100
+34,"Audi TT 224 ""APX""",5000,1999,247000,Essence,Manuelle,Rueil-Malmaison 92500
+35,Volkswagen Golf 6 1.6L TDI 105,4300,2010,190000,Diesel,Manuelle,Marseille 13012 12e Arrondissement
+36,LEXUS RX 400h 3.3 V6 PRESIDENT E-CVT CRIT'AIR 1 / INTERNET / TELE / COYOTE,9200,2008,274500,Hybride,Automatique,Tournefeuille 31170
+37,Mercedes benz,12000,1992,18000,Essence,Automatique,Lyon 69002 2e Arrondissement
+38,Tesla model 3 blanche / excellent état,19000,2021,168000,Électrique,Automatique,Charnay-lès-Mâcon 71850
+39,Mercedes-Benz CLS 350 CDI,17500,2011,181000,Diesel,Automatique,Dijon 21000
+40,"Clio 4 1,5 dci",6400,2015,170000,Diesel,Manuelle,Lormont 33310
+41,Citroen c5 aircross hybride rechargeable,13500,2021,121000,Hybride,Automatique,Échirolles 38130
+42,Peugeot 3008 blanc de 2014,6200,2014,220000,Diesel,Manuelle,Sougé-le-Ganelon 72130 Le Gué-Ory
+43,Audi A6 2.0 TFSI 252 Quattro Avus S tronic A,19777,2015,157500,Essence,Automatique,Garches 92380
+44,"Clio 4 1,5 dci",6400,2015,170000,Diesel,Manuelle,Lormont 33310
+45,Citroen c5 aircross hybride rechargeable,13500,2021,121000,Hybride,Automatique,Échirolles 38130
+46,Peugeot 5008,12500,2017,205000,Diesel,Automatique,Réalmont 81120
+47,DACIA DUSTER Blue dCi 115 4x2 Prestige CAMERA DE RECUL GARANTIE 12 MOIS,11880,2019,114500,Diesel,Manuelle,Villebon-sur-Yvette 91140
+48,Hyundai kona hybrid creative carplay camera de recul affichage tete haute garantie 12 mois,18980,2022,53500,Hybride,Automatique,Villebon-sur-Yvette 91140
+49,PORSCHE CAYENNE COUPE E-Hybrid 3.0 V6 462 ch PACK CARBON DESIGN ECHAPEMENT PSE TOIT PANO PSCB GARANTIE 12 MOIS,77780,2020,73000,Hybride,Automatique,Villebon-sur-Yvette 91140
+50,FORD FOCUS 1.0 SCTi 125CH ECOBOOST MHEV ST LINE TOIT OUVRANT APPLE CARPLAY GARANTIE 12 MOIS,15380,2021,83000,Essence,Manuelle,Villebon-sur-Yvette 91140
+51,PEUGEOT 308 2.0 BlueHDi 150ch SS EAT6 GT Line RADAR DE RECUL SIÈGES ALCANTARA GARANTIE 12MOIS,14980,2015,42500,Diesel,Automatique,Villebon-sur-Yvette 91140
+52,Échange SUV 4x4 Peugeot 4008 150Cv,1,2013,195000,Diesel,Manuelle,Poitiers 86000
+53,Citroën berlingo 1.6 hdi 75cv occamobile 64 pau,12500,2015,70210,Diesel,Manuelle,Artigueloutan 64420
+54,E-C4 169 Loa,169,2023,40000,Électrique,Automatique,Lyon 69008 8e Arrondissement
+55,Peugeot 208 Allure PureTech 100 S&S – 1ère main,16990,2021,22766,Essence,Manuelle,Freyming-Merlebach 57800
+56,Moteur 2l HDI 90,200,2003,275000,Diesel,Manuelle,Agen 47000
+57,Audi R8 V8,43990,2007,130000,Essence,Automatique,Nantes 44300 Doulon-Bottière
+58,Smart Cabriolet,3000,2002,120300,Essence,Automatique,Belfort 90000
+59,Passat Embassy,9000,2012,162532,Essence,Manuelle,Maroilles 59550
+60,Peugeot rcz 1.6 thp 156cv occamobile 64 pau,9000,2010,122284,Essence,Manuelle,Artigueloutan 64420
+61,Volkswagen Polo,9500,2018,176000,Diesel,Manuelle,Petite-Forêt 59494
+62,Kia venga,1400,2003,276098,Diesel,Manuelle,Lys-lez-Lannoy 59390
+63,Mini mini 2,14490,2011,105000,Essence,Manuelle,Cernay 68700
+64,Seat ibiza,1400,2003,276330,Diesel,Manuelle,Roubaix 59100
+65,Toyota Yaris Hybride HSD 100H,9800,2015,108000,Hybride,Automatique,Saint-Clément-les-Places 69930
+66,Opel corsa,4000,2011,230000,Diesel,Manuelle,Saubusse 40180
+67,Vendre mercedes C 200,4800,2009,300000,Diesel,Manuelle,Fosses 95470
+68,Renault scenic iii dci 130 finition privilege,3390,2010,225000,Diesel,Manuelle,Sotteville-lès-Rouen 76300
+69,207cc,3800,2007,133000,Essence,Manuelle,Saint-Fargeau 89170
+70,Citroën c3 1.4 hdi ct ok,2850,2003,174350,Diesel,Manuelle,Bourg-en-Bresse 01000
+71,Voiture Mini Cooper,8000,2015,187000,Diesel,Manuelle,Forges-les-Eaux 76440
+72,TIGUAN TDI 150 cv,18300,2016,172,Diesel,Manuelle,La Chapelle-des-Fougeretz 35520
+73,"Mercedes ML 270 CDI LUXURY, 7P, BVA 5 rapports",6990,2002,205950,Diesel,Automatique,Combs-la-Ville 77380
+74,Modus édition Yahoo,3000,2013,192000,Diesel,Manuelle,Quarouble 59243
+75,Bmw serie 1,24300,2020,87000,Essence,Automatique,Aurillac 15000
+76,BMW Série 1 116i Urban Life,8499,2012,169000,Essence,Manuelle,Nancy 54000
+77,Mini r56 2010,2200,2010,267,Diesel,Manuelle,Homécourt 54310
+78,Clio 3 1.2 essence/boîtier éthanol,2800,2006,171500,Essence,Manuelle,Orléans 45000
+79,Volkswagen Polo V 1.6 TDI 90 2011,5200,2011,229000,Diesel,Manuelle,Aumur 39410
+80,Mercedes classe B 200d 136ch Sport Édition 7G-DCT,17900,2018,100500,Diesel,Automatique,Lignières 10130
+81,BMW 440i xDrive Gran Coupé 2018 • Full Options • 95 300 km • Origine France,40000,2018,95300,Essence,Automatique,Kingersheim 68260
+82,Renault espace 7 places en bonne état,3100,2007,232900,Diesel,Manuelle,La Défense 92800
+83,Polo 5 GTI MK5,8500,2011,192000,Essence,Automatique,Persan 95340
+84,Citroen C4 Moteur électrique 136ch (100 kW) Live Automatique,18990,2023,13460,Électrique,Automatique,Saint-Jean-de-Maurienne 73300
+85,Ford Puma 1.0 EcoBoost 125 ch mHEV S&S Powershift ST-Line,24190,2025,10,Hybride,Automatique,Gap 05000
+86,Renault espace 7 places en bonne état,3100,2007,232900,Diesel,Manuelle,La Défense 92800
+87,Polo 5 GTI MK5,8500,2011,192000,Essence,Automatique,Persan 95340
+88,Vend C3 très bon état,2500,2006,170000,Diesel,Manuelle,Thônes 74230
+89,Skoda Kodiaq 1.5 TSI 150 ACT BVM6 7pl Active,27490,2021,81741,Essence,Manuelle,Chalon-sur-Saône 71100
+90,Volkswagen T-Cross 1.0 TSI 110 Start/Stop BVM6 Style,18990,2023,61701,Essence,Manuelle,Saint-Marcel 71380
+91,Volkswagen T-Roc 1.5 TSI 150 EVO Start/Stop DSG7 Carat,24990,2022,40287,Essence,Automatique,Chalon-sur-Saône 71100
+92,Citroën c4 x PureTech 130 S&S EAT8 Max,17990,2023,7510,Essence,Automatique,Chalon-sur-Saône 71100
+93,Volkswagen Tiguan 1.5 eTSI 150ch DSG7 R-Line Exclusive,47490,2024,29672,Essence,Automatique,Chalon-sur-Saône 71100
+94,Mini Paceman,5000,2015,146000,Diesel,Automatique,Chermignac 17460
+95,Kia ceed,2300,2007,206000,Diesel,Manuelle,Chanos-Curson 26600
+96,Audi A7 3l tdi 218CH,24900,2015,141500,Diesel,Automatique,Auxerre 89000
+97,Ds3 59000km facture dispnibile,5850,2016,59000,Essence,Manuelle,Épinal 88000
+98,Citroën C4 Millénium 110ch – 12/2017 – 73 500 km – Excellent état,9500,2017,73500,Essence,Manuelle,Antibes 06600
+99,Mini Cooper D en panne,2500,2011,171000,Diesel,Manuelle,Saint-Maur-des-Fossés 94100
+100,URGENT Volkswagen Tiguan Diesel 2.0 TDI 110ch - Fin 2013 - 175 000 km,9990,2013,175000,Diesel,Manuelle,Toulon 83000
+101,Renault symbioz blanc iconic,26990,2024,15000,Hybride,Automatique,Roche-la-Molière 42230
+102,CLIO V Intens,10600,2020,125500,GPL,Manuelle,Saint-Ay 45130
+103,Tiguan,29500,2019,112738,Diesel,Automatique,Cayenne 97300
+104,Suzuki Swift 1.2 Dualjet Hybrid All grip pack de 2024,16750,2024,20000,Hybride,Manuelle,Bréhémont 37130
+105,FORD FUSION 2006 - ju2 1.4 TDCi 68 CV / 50 KW DIESEL,2500,2006,243076,Diesel,Manuelle,Vitry-sur-Seine 94400
+106,Ford ranger wildtrak,47000,2024,12500,Diesel,Automatique,Le Castellet 83330
+107,Audi A4 1.9 TDI,5990,2004,165000,Diesel,Automatique,Châlons-en-Champagne 51000
+108,SEAT Altea XL,5500,2012,214728,Diesel,Manuelle,Saint-Pierre-des-Corps 37700
+109,Peugeot 3008 GT 300cv hybride,20900,2021,92000,Hybride,Automatique,Saint-Jean 31240
+110,Kia picanto 1.0 69 ch style,4990,2013,139000,Essence,Manuelle,Saint-Jean-de-Boiseau 44640
+111,VW Golf Plus 1.9 TDI 105 CV 2007,2000,2007,310000,Diesel,Manuelle,Bouc-Bel-Air 13320
+112,C3 shine,9700,2019,107000,Diesel,Manuelle,Avignon 84000
+113,Volkswagen jetta,5800,2013,153000,Essence,Manuelle,Gonesse 95500
+114,Clio 3,1800,2007,305000,Diesel,Manuelle,Amiens 80000
+115,"Fiat 500 Lounge 118700km TBE, pas de frais à prévoir",5500,2013,118700,Essence,Manuelle,Carnoux-en-Provence 13470
+116,206 CC 4500 éthanol et essence,4500,2004,183000,Essence,Manuelle,Bain-de-Bretagne 35470
+117,Peugeot e-208 électrique,13000,2020,37000,Électrique,Automatique,Fort-de-France 97200
+118,Renault Capture 2014,6990,2014,142000,Essence,Manuelle,Sainte-Colombe 69560
+119,Audi A6 berline,9000,2006,275000,Diesel,Manuelle,La Roche-sur-Yon 85000
+120,Clio 3 commercial / société,2200,2010,262500,Diesel,Manuelle,Orval 18200
+121,Magnifique Opel Adam s,14000,2015,20000,Essence,Manuelle,Castillon-Savès 32490
+122,Opel zafira,2900,2009,219000,Diesel,Manuelle,Nancy 54000
+123,Propre,5700,2007,278000,Diesel,Automatique,Cugnaux 31270
+124,Range rover evoque R dynamic flexfuel,30000,2021,61000,Autre,Automatique,Grabels 34790
+125,Range Rover Velar,37000,2017,13000,Diesel,Automatique,Vitré 35500
+126,Peugeot 308 II 1.6 BLUEHDI 120CH ACTIVE S&S 5P,6990,2016,178000,Diesel,Manuelle,Sevran 93270
+127,TOYOTA AURIS RC18 1.2 T Design garantie 2 ans,12990,2018,98974,Essence,Manuelle,Pontcharra 38530
+128,Range Rover Velar,37000,2017,13000,Diesel,Automatique,Vitré 35500
+129,Hyundai santa fe,6900,2009,164000,Diesel,Manuelle,Brive-la-Gaillarde 19100
+130,Audi s3 cabriolet quattro 310cv,28800,2017,115000,Essence,Automatique,Moulins 03000
+131,Volkswagen Golf 1.5 eTSI OPF 130 DSG7 Style,27990,2024,17865,Essence,Automatique,Saint-Sulpice-de-Royan 17200
+132,Cupra Formentor eHybrid 272 ch DSG6 VZ,47490,2025,8001,Hybride,Automatique,Saintes 17100
+133,Skoda Kodiaq 1.5 TSI 150 ch Hybrid ACT DSG7 5pl Plus Suite Noir,50900,2025,10,Essence,Automatique,Angoulins 17690
+134,Skoda Kamiq 1.0 TSI Evo 110 ch BVM6 Ambition,17490,2023,42230,Essence,Manuelle,Saintes 17100
+135,Ford Puma 1.0 EcoBoost 125 ch mHEV S&S Powershift Titanium,19900,2023,28530,Essence,Automatique,Châteaubernard 16100
+136,MERCEDES-BENZ Classe GLA 200 2.1 CDi 16V 7G-DCT 136 cv TOIT Panoramique,17500,2016,117000,Diesel,Automatique,Tremblay-en-France 93290
+137,DUSTER HYBRIDE boite auto en arrivage remise 4 270e export POSSIBLE,24995,2025,4,Hybride,Automatique,Erstein 67150
+138,Mégane 3 Estate,7500,2009,91000,Diesel,Manuelle,Saint-Dié-des-Vosges 88100
+139,C4,2600,2008,210000,Diesel,Manuelle,Bourg-en-Bresse 01000
+140,Vends BMW série 1 - révision Novembre 25,6200,2011,216300,Diesel,Manuelle,Bollène 84500
+141,À vendre : Peugeot 508 2.0 HDi 150ch Business Pack,7600,2014,176249,Diesel,Manuelle,Houilles 78800
+142,Peugeot 2008 1.6 BlueHDI 120ch S&S BMV6 Crossway - 05/2016 - 5.250 - Bon état,5500,2016,189000,Diesel,Manuelle,Santeny 94440
+143,Renault Scenic 2011 – Familiale – Boîte Auto – 148 000 km,6000,2011,148000,Diesel,Automatique,Le Puy-en-Velay 43000
+144,Peugeot 207,4200,2006,109256,Essence,Manuelle,Suze-la-Rousse 26790
+145,Citroën c4,1200,2008,228938,Diesel,Automatique,Arbanats 33640
+146,Citroën C4,5900,2013,195000,Diesel,Manuelle,Berre-l'Étang 13130
+147,Toyota Urban Cruiser,5990,2009,135000,Diesel,Manuelle,Grenoble 38000
+148,RENAULT SCENIC 4 gris claire - 1.5 dCi (110 cv) business,10500,2016,160000,Diesel,Manuelle,Herblay-sur-Seine 95220
+149,BMW X5 F15 Exclusive xDrive30d FULL Options - 258 ch,22500,2015,187500,Diesel,Automatique,Taverny 95150
+150,Peugeot 204 GL 1971,4200,1971,72000,Essence,Manuelle,Rugles 27250
+151,Renault Clio 4 Phase 2 1.2 16V,8990,2017,97000,Essence,Manuelle,Cesson-Sévigné 35510
+152,Vend Peugeot 2008,11500,2015,103000,Diesel,Manuelle,Hagetmau 40700
+153,Audi a8,16500,2011,310000,Diesel,Automatique,Saint-Avold 57500
+154,C4 spacetourer,7500,2017,140000,Diesel,Manuelle,Bondues 59910
+155,Fiat 500 Dolcevita 1.0 70ch,9500,2021,96000,Essence,Manuelle,Lentilly 69210
+156,Volkswagen up,7100,2016,98000,Essence,Manuelle,Saint-Étienne 42000
+157,Bmw e46,2299,2002,294000,Essence,Manuelle,Muret 31600
+158,Bmw 330 cd pack luxe,10000,2003,200000,Diesel,Manuelle,Olivet 45160
+159,Citroën C2 1.1i 90000km,1700,2005,90000,Essence,Manuelle,Livry-Gargan 93190
+160,Vends Ford Puma hybride,14550,2020,90000,Hybride,Manuelle,Langon 33210
+161,Mercedes cla Amg,16700,2017,123000,Diesel,Automatique,Poix-du-Nord 59218
+162,Fiat coupé 130 cv,5000,2000,198200,Essence,Manuelle,Mouguerre 64990
+163,Citroën C4 1.6 HDI,4400,2012,188000,Diesel,Manuelle,Libercourt 62820
+164,Peugeot 308 sw,8500,2020,169000,Diesel,Automatique,Paris 75001
+165,Ds5 échange ou vend,9000,2013,169000,Diesel,Manuelle,Saint-Étienne 42000
+166,Mercedes cla shooting brake orange art edition,18500,2015,123100,Essence,Automatique,Saint-Chinian 34360
+167,207 Féline 1.6 HDI 110ch 2009 110000km,5500,2009,109275,Diesel,Manuelle,Saint-Brice-sous-Forêt 95350
+168,Nissan Qashqai NOUVEAU MILD HYBRID 158 CH XTRONIC N-CONNECTA,28990,2024,10,Hybride,Automatique,Gap 05000
+169,Peugeot 3008 Hybride Rechargeable 195 Allure e-DCS7 + CUIR / TOIT OUVRANT / VISION 360,36890,2024,26905,Hybride,Automatique,Avignon 84140
+170,207 Féline 1.6 HDI 110ch 2009 110000km,5500,2009,109275,Diesel,Manuelle,Saint-Brice-sous-Forêt 95350
+171,Audi A5 Sportback S-Line TDI 190cv,31900,2020,78000,Diesel,Automatique,Le Havre 76620
+172,Citroën C3 PureTech feel édition,5800,2016,81000,Essence,Manuelle,Nice 06100 Saint-Sylvestre
+173,Renault Kadjar 2 Intens Blue dCi 115 EDC,17990,2019,77597,Diesel,Automatique,Socx 59380
+174,Volkswagen Polo Life 1.0 TSI 95 S&S DSG7,19998,2023,22643,Essence,Automatique,Socx 59380
+175,Peugeot 2008 GT Hybrid 136 e-DCS6 neuf -27%,26998,2024,10,Hybride,Automatique,Socx 59380
+176,Peugeot 3008 Allure Hybrid 145 e-DCS6 neuf -26%,30998,2025,10,Essence,Automatique,Socx 59380
+177,Volkswagen Tiguan Life Plus 1.5 eTSI 150ch DSG7,33490,2024,34817,Hybride,Automatique,Socx 59380
+178,PEUGEOT 108 VTi 72ch Style clim,7500,2019,41000,Essence,Manuelle,Lyon 69002
+179,Peugeot 307 - Très bon état,2700,2001,170000,Essence,Manuelle,Saint-Paul-de-Baïse 32190 Sanctorum
+180,"Polo 1,2l 70cv match",7490,2012,99000,Essence,Manuelle,Cagnes-sur-Mer 06800
+181,Très belle Fiat 500 avec CT OK,3900,2011,89000,Essence,Manuelle,Thiais 94320
+182,RENAULT Captur TCE 130 Intens,14890,2020,72000,Essence,Manuelle,Enghien-les-Bains 95880
+183,Lancia delta 2.0,4500,2012,243000,Diesel,Manuelle,Saint-Nazaire 44600
+184,Audi A3 S-line35 TFSI,34000,2024,27000,Essence,Automatique,Nantes 44000
+185,Voklswagen fox,2300,2007,168000,Essence,Manuelle,Le Havre 76600
+186,Ford Ranger Wildtrack,34900,2020,122500,Diesel,Automatique,Bapaume 62450
+187,Mercedes Vito Mixto Long 116CDI 2.2 163ch -5place 2014,18450,2014,175400,Diesel,Manuelle,Mauges-sur-Loire 49570 Montjean-sur-Loire
+188,Golf 8 Rline TDI 150Chx Full Led,21500,2020,115000,Diesel,Automatique,Wattrelos 59150
+189,C3 hdi,2500,2008,190500,Diesel,Manuelle,Sathonay-Camp 69580
+190,Honda Jazz Hybride e-HEV 1.5 i-MMD Executive 20950 km – 1re main,20900,2022,20900,Hybride,Automatique,Cagnes-sur-Mer 06800
+191,Renault twingo 2 - 2011 - 141000 km,3450,2011,141000,Essence,Manuelle,Saint-Maur-des-Fossés 94100
+192,Bmw 330i e46,7999,2004,227000,Essence,Automatique,Le Grand-Quevilly 76120
+193,PEUGEOT 207 1.4 VTI TENDANCE DE 95 Cv ( 5 PORTES ),3990,2011,165885,Essence,Manuelle,Saint-Avold 57500
+194,Jeep cherokee,2500,2006,160000,Diesel,Manuelle,Crépey 54170
+195,Peugeot 108 Active VTI 72 S&S BMV5,8990,2020,35000,Essence,Manuelle,Saint-Malo 35400
+196,M440i,45000,2021,94000,Essence,Automatique,Cagnes-sur-Mer 06800
+197,Peugeot 508 sw,6200,2015,225500,Diesel,Manuelle,Sannat 23110
+198,Break c5,3200,2009,207500,Diesel,Manuelle,Douvaine 74140
+199,Renault clio 2,1500,2004,275000,Diesel,Manuelle,Coulommiers 77120
+200,Peugeot 106 à vendre – Très bon état,650,1997,220000,Diesel,Manuelle,Vénissieux 69200
+201,Cupra Formentor 1.5 TSI 150 Ch BLEU PETROLE MAT MANUELLE,22700,2021,98500,Essence,Manuelle,Le Bosc 34700 Salelles du Bosc
+202,Citroën c-elysee faible kilométrage berline,4900,2016,51000,Essence,Manuelle,Catus 46150
+203,Duster hybrid journey automatic,26000,2024,8000,Hybride,Automatique,Pont-l'Abbé 29120
+204,Ford Focus ST LINE,8000,2018,164000,Essence,Manuelle,Le Puy-Sainte-Réparade 13610
+205,Toyota Auris à vendre,6900,2011,95381,Essence,Manuelle,Le Gosier 97190
+206,Vw T3,7000,1987,215000,Essence,Automatique,Saint-Brieuc 22000
+207,Twingo 2,2500,2010,197000,Essence,Manuelle,Strasbourg 67000
+208,Audi s3 sportback 2.0 tfsi 310 s tronic quattro,38990,2020,105000,Essence,Automatique,Caissargues 30132
+209,Porsche Macan S V6 340ch suivi Porsche,41400,2018,94000,Essence,Automatique,Hénin-Beaumont 62110
+210,Volvo xc40 b3 momentum 2.0 163cv bva faible kilometrage garantie 12 mois,34990,2023,49200,Essence,Automatique,Nozay 44170
+211,Mercedes c 63 amg s coupe - malus paye - suivi mercedes - to / burmester / siege f1,59990,2019,62900,Essence,Automatique,Sausheim 68390
+212,320d e90,4400,2005,405200,Diesel,Manuelle,Asnières-sur-Seine 92600
+213,Peugeot 208 (Phase2) / Régulateur de vitesse / CritAir 1,8700,2021,75000,Essence,Manuelle,Viry-Châtillon 91170
+214,Fiat panda,8990,2019,39160,Essence,Manuelle,Elven 56250
+215,Peugeot 3008 HYBRID4 300ch GT e-EAT8,17290,2019,123096,Hybride,Automatique,Normanville 27930 Caer
+216,Fiat 500 1.2 8v 69ch Lounge,10590,2019,50682,Essence,Manuelle,Normanville 27930 Caer
+217,Peugeot 208 e-208 156ch Allure,26990,2024,500,Électrique,Automatique,Normanville 27930 Caer
+218,Peugeot 308 SW 1.2 PureTech 110ch E6.c S&S Style,8990,2018,116284,Essence,Manuelle,Normanville 27930 Caer
+219,Peugeot 3008 HYBRID4 300ch GT e-EAT8,18990,2020,97593,Hybride,Automatique,Normanville 27930 Caer
+220,Nissan juke,8500,2015,123000,Diesel,Manuelle,Remire-Montjoly 97354
+221,Mercedes Classe C200 CDI W204,8500,2011,173000,Diesel,Manuelle,Chartres 28000
+222,Bmw e46 touring (Break),1000,2001,250000,Essence,Automatique,Ville-la-Grand 74100
+223,207,1800,2008,240000,Diesel,Manuelle,Pfastatt 68120
+224,Bmw m3 e46,25000,2002,189000,Essence,Manuelle,Baugé-en-Anjou 49150
+225,Je vend ma voiture Citroën c4 cactus 2020 merci de me contacter pour plus d'informations,6990,2020,199000,Diesel,Manuelle,Dreux 28100
+226,DACIA Duster Phase 2 SUV 1.5 dCi FAP eco2 4x4 109 cv,16000,2016,56000,Diesel,Manuelle,Feytiat 87220
+227,"RENAULT CLIO 1,6 16v 110 DYNAMIQUE",3290,2007,210000,Essence,Manuelle,Saint-Étienne 42000
+228,Honda jazz,9000,2020,147500,Essence,Manuelle,Marennes-Hiers-Brouage 17320 Marennes
+229,FORD Focus ST170 (rallye),19500,2002,132136,Essence,Manuelle,Mauvezin 32120
+230,Saab 99l 1972,1450,1972,180000,Essence,Manuelle,Villers-Cotterêts 02600
+231,Peugeot 208 1.2 PureTech 100ch S&S GT Berline,11800,2022,74200,Essence,Manuelle,Nice 06300
+232,Mercedes C300de AMG line,49900,2024,36000,Hybride,Automatique,Valenciennes 59300
+233,3008 GT line,16500,2020,116800,Diesel,Automatique,Saint-Sigismond-de-Clermont 17240
+234,Mercedes Benz CLK,5500,1999,180000,Essence,Manuelle,Six-Fours-les-Plages 83140
+235,RENEAULT CLIO 3 1.5 dci 85ch,4450,2008,189000,Diesel,Manuelle,Orléans 45000
+236,BMW 325 d 197cv cabriolet,18700,2008,86000,Diesel,Manuelle,Vierzon 18100
+237,207 1.4 95ch,1800,2008,187000,Essence,Manuelle,Valenciennes 59300
+238,Citroën Saxo 1.1i 5P – Direction assistée & Clim – 147 000 km – 2000 non négociable,2000,2002,147000,Essence,Manuelle,Nexon 87800
+239,Peugeot 207 1.4 Active 5P Grise,4850,2010,147405,Essence,Manuelle,Vichy 03200
+240,Renault Zoé Life - Achat intégral,4990,2015,66200,Électrique,Automatique,Ingré 45140
+241,Renault 4L GTL,7700,1989,91260,Essence,Manuelle,Nantes 44300
+242,Renault Mégane E-Tech Plug-In Hybrid RS Line – 83.000 kms – 14.490,14490,2020,83000,Hybride,Automatique,Cannes 06400
+243,Golf 7 GTD,17000,2014,165000,Diesel,Manuelle,Estaires 59940
+244,Peugeot 206+,800,2010,232000,Diesel,Manuelle,Nanteuil-le-Haudouin 60440
+245,Volkswagen T-Roc 1.5 TSI 150 EVO CARAT,23790,2020,42893,Essence,Automatique,Boulogne-Billancourt 92100
+246,Peugeot 308 - 1.6 l - HDi,5500,2012,197000,Diesel,Automatique,Marmande 47200
+247,Mini Cooper,4000,2008,218890,Diesel,Manuelle,Metz 57000 Magny
+248,Ford focus,1350,2005,263000,Diesel,Manuelle,Lizy-sur-Ourcq 77440
+249,Volkswagen polo 5,8500,2010,64000,Essence,Automatique,Villejuif 94800
+250,Opel Crossland,9200,2018,87000,Essence,Manuelle,Martigues 13500
+251,Peugeot 3008 GT Line,17800,2018,118000,Diesel,Automatique,Louzy 79100
+252,Peugeot 308 SW (3) PureTech 130 ALLURE PACK,16900,2022,57412,Essence,Manuelle,Buzet-sur-Baïse 47160
+253,PEUGEOT 208 1.2i PureTech 100 Active SELLENIUM + RADAR ARR + CARPLAY,14970,2024,12596,Essence,Manuelle,Saint-Égrève 38120
+254,BMW série 5 E60 pack M,6800,2006,345000,Diesel,Manuelle,Louzy 79100
+255,Citroën C3 1.1 Essence – 2003 – Économique et fiable,3200,2003,200150,Essence,Manuelle,Peyrolles-en-Provence 13860
+256,Peugeot 208 GT,18300,2024,35000,Essence,Automatique,Chelles 77500
+257,Land-Rover Range Rover Velar 2.0 P400e 404ch PHEV Dynamic SE AWD BVA,78900,2024,10000,Hybride Rechargeable,Automatique,Argenteuil 95100
+258,Citroen C4 X Moteur électrique 136ch (100 kW) Shine Automatique,19299,2023,8996,Électrique,Automatique,Pau 64000
+259,Mercedes Eqe Suv 500 408ch AMG Line 4Matic,81999,2025,3205,Électrique,Automatique,Chelles 77500
+260,Ford Explorer 340ch Extended Range 79kWh Pack Premium AWD,46999,2025,10000,Électrique,Automatique,Meaux 77100
+261,Peugeot 2008 e-2008 156ch GT,34990,2025,5853,Électrique,Automatique,Clermont-Ferrand 63000
+262,Vw tiguan,7900,2010,216000,Diesel,Automatique,Clermont-Ferrand 63000
+263,Peugeot 308 1.6 hdi finition confort,3990,2010,175000,Diesel,Manuelle,Sotteville-lès-Rouen 76300
+264,Volvo s60 d5 163 ch,600,2005,380000,Diesel,Manuelle,Ruffec 16700
+265,Fiat Abarth 595C,16300,2018,70200,Essence,Manuelle,Saint-Cloud 92210
+266,Seat Ibiza 1.6 TDi 90cv COPA,2800,2011,271000,Diesel,Manuelle,Uxegney 88390
+267,308 t7 16 HDI 110,4800,2008,200000,Diesel,Manuelle,Saint-Germain-des-Prés 49170
+268,Véhicule tpmr,10000,2009,261700,Diesel,Manuelle,Toulouse 31000
+269,C4 Picasso,1600,2010,295066,Diesel,Manuelle,Lille 59000
+270,Golf 7R,27000,2015,100000,Essence,Automatique,Figeac 46100
+271,Toyota Auris,13000,2017,180000,Hybride,Automatique,Goussainville 95190
+272,Renault Scénic 3 – 2010 – Spacieuse et économique,2000,2010,258000,Diesel,Manuelle,Corbeil-Essonnes 91100
+273,Volkswagen Golf 7 1.0 TSI 110ch,12290,2018,146000,Essence,Manuelle,Strasbourg 67000
+274,Smart FORFOUR 1.5i 2004,2800,2004,154000,Essence,Manuelle,Bourges 18000
+275,Beau x6,34500,2018,120000,Diesel,Automatique,Angoulême 16000
+276,"Volkswagen Polo IV, 1.2 60ch",2800,2007,120000,Essence,Manuelle,Avignon 84000
+277,Ford f150 v8 5.4 carte grise française,16500,2006,270000,GPL,Automatique,Armentières 59280
+278,Golf 7 2.0 TDI 150CV BVA,12500,2013,175000,Diesel,Automatique,Vitry-sur-Orne 57185
+279,Taycan Turbo Cross Turismo Vert Mamba Porsche Approved 2021 63 000 km,72900,2021,65600,Électrique,Automatique,Mandelieu-la-Napoule 06210
+280,BMW 320d e90,7000,2005,250000,Diesel,Manuelle,Vauvillers 70210
+281,Toyota Corolla D4D CT OK,1000,2002,355000,Diesel,Manuelle,Toulouse 31300 Fontaine Bayonne-Cartoucherie
+282,BMW série 530 X drive pack m,13900,2011,243500,Diesel,Automatique,Cournon-d'Auvergne 63800
+283,Pruis,6200,2007,215000,Hybride,Automatique,Champigny-sur-Marne 94500
+284,Scenic 3 1.9 dci 130,3000,2009,300050,Diesel,Manuelle,Vernouillet 28500
+285,Mercedes classe a 180 7g-dct amg,22500,2020,110000,Essence,Automatique,Saint-Étienne 42000
+286,Polo IV TDI 75cv - 5 portes,1300,2002,283000,Diesel,Manuelle,Caluire-et-Cuire 69300
+287,Peugeot 2008 1.6 BlueHdi 120cv feline,4890,2015,254382,Diesel,Manuelle,Annecy 74000
+288,Mercedes SLK 230 K,7500,1998,235000,Essence,Automatique,Caen 14000
+289,Suzuki Jimmy 1.3 85 CV hard top,11490,2008,136850,Essence,Manuelle,Clermont-Ferrand 63100
+290,Duster 3 Hybrid 140,26500,2024,27000,Hybride,Automatique,Mulhouse 68200
+291,Renault Twingo 3,7400,2017,82120,Essence,Manuelle,Couzon-au-Mont-d'Or 69270
+292,Clio 3 estate 1.5 dci,4000,2008,175000,Diesel,Manuelle,Saint-Benoît-sur-Loire 45730
+293,Dacia / Sandero 1.0 TCe LPG Stepway Essential,11990,2021,34500,GPL,Manuelle,Maubec 38300
+294,Mercedes-benz CLA Shooting Brake 200 d 150ch AMG Line 8G-DCT,43990,2024,7639,Diesel,Automatique,Reims 51100 Murigny
+295,Peugeot 2008 1.5hdi allure 110ch,11990,2021,135000,Diesel,Manuelle,Brières-les-Scellés 91150
+296,Dacia / Sandero 1.0 TCe LPG Stepway Essential,11990,2021,34500,GPL,Manuelle,Maubec 38300
+297,Citroën C3 II,2500,2013,168500,Essence,Manuelle,Orléans 45000
+298,Zafira,2200,2006,202800,Diesel,Manuelle,Chelles 77500
+299,Fiat 500X 2.0 MultiJet 140 BVA Cross Plus,10850,2016,155793,Diesel,Automatique,Harfleur 76700
+300,Hyundai Tucson 1.6 CRDi 136 Mild Hybrid 2WD DCT7 Executive,18500,2021,153389,Hybride,Automatique,Ranchot 39700
+301,Mercedes Classe C 202 220 d 194 9G-Tronic AMG Line,29990,2021,92864,Diesel,Automatique,Bourg-en-Bresse 01000
+302,Mercedes Classe B 1.8 180 CDI 109 7G-DCT Fascination,10490,2012,159747,Diesel,Automatique,Nice 06300
+303,Audi A3 sportback 1.0 TFSI 115 S-Tronic7 Design Luxe,15490,2017,104204,Essence,Automatique,Corte 20250
+304,Mercedes glc coupe 220 pack fascination AMG,27990,2018,149000,Diesel,Automatique,Saint-Loubès 33450
+305,Dacia duster TCE 125 climatisé lauréate,7990,2014,96500,Essence,Manuelle,Maubec 38300
+306,Toyota yaris essence 2003 CT ok -6mois,3000,2003,178500,Essence,Manuelle,Saint-Nazaire 44600
+307,Peugeot 508 1.6 e-hdi 115ch 2012,6800,2012,189000,Diesel,Automatique,Montbéliard 25200
+308,Dacia sandero TCE 90 stepway Ambiance,6990,2015,111500,Essence,Manuelle,Maubec 38300
+309,Toyota Yaris 70 VVT-i France Connect 5P,11990,2020,68879,Essence,Manuelle,Bièvres 91570
+310,Vend golf 6 GTi bien lire l’annonce,3500,2009,270000,Essence,Manuelle,Metz 57070 Borny
+311,Volkswagen golf VI TSI 160ch,5990,2011,169500,Essence,Manuelle,Lecelles 59226
+312,Jaguar xj 8 3.5 v8 - 266 executivee ba,18990,2007,179000,Essence,Automatique,Caissargues 30132
+313,Clio 3,2200,2008,273000,Diesel,Manuelle,Marseille 13012 12e Arrondissement
+314,A3 2l140,10500,2016,250000,Diesel,Manuelle,Gisors 27140
+315,Opel corsa,3000,2007,216000,Diesel,Manuelle,Velleron 84740
+316,407 hdi,3900,2005,138500,Diesel,Manuelle,Goderville 76110
+317,Ford focus,800,2004,280000,Diesel,Manuelle,Port-de-Bouc 13110
+318,Bmw serie 7 g11/g12 750i xdrive 530 ch bva8 m sport,44990,2019,151000,Essence,Automatique,Caissargues 30132
+319,Peugeot 604,900,1979,151000,Essence,Manuelle,Saint-Maixent-l'École 79400
+320,Mercedes benz Cls 350,11900,2011,310000,Diesel,Automatique,Blois 41000
+321,Coccinelle Cox cabriolet 1303 1978 Française,10000,1978,99999,Essence,Manuelle,Clamart 92140
+322,Scirocco 2 tsi 211cv modèle 2011,15000,2011,96000,Essence,Manuelle,Mortain-Bocage 50140
+323,Vends Volvo XC40 - Prestige,19000,2018,158000,Diesel,Manuelle,Châtel-Guyon 63140
+324,Alfa Romeo 147 1.6 T.spark 120CH,4000,2006,145000,Essence,Manuelle,Rouen 76000
+325,Laguna 3 GT 4 control,7200,2008,157000,Diesel,Manuelle,Porte des Pierres Dorées 69400
+326,Peugeot 3008 1.2 PureTech 130ch Allure Business EAT8 6cv Juin 2019,15500,2019,70000,Essence,Automatique,Castries 34160
+327,Clio 4 RS,15000,2015,113000,Essence,Automatique,Abondance 74360
+328,"Renault Clio 1,5l dci 75cv",8990,2018,73000,Diesel,Manuelle,Quimper 29000
+329,C3 Picasso,3700,2010,139000,Essence,Manuelle,Labergement-Sainte-Marie 25160
+330,Twizy 45 cargo sans permis,6000,2018,17848,Électrique,Automatique,Beauzelle 31700
+331,307,1700,2005,283000,Diesel,Manuelle,Charancieu 38490
+332,Bmw 320d e90,13000,2006,150000,Diesel,Automatique,Le Mans 72000
+333,Seat 6j 1.2 tdi,2000,2010,110000,Diesel,Manuelle,Saint-Joseph 97212
+334,Fiat 500,6500,2015,91000,Essence,Manuelle,Saint-Génis-des-Fontaines 66740
+335,"PEUGEOT 206 1.4es, 75ch 3 portes",2800,2006,146200,Essence,Manuelle,Carrières-sous-Poissy 78955

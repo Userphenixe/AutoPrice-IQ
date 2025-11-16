@@ -1,10 +1,14 @@
 import asyncio, re
 from urllib.parse import urljoin
+from pathlib import Path
 from playwright.async_api import async_playwright, TimeoutError as PWTimeout
+import pandas as pd
 
 BASE = "https://www.leboncoin.fr/c/voitures"
 NB_PAGES = 10
 NBSP = "\u00A0"
+BASE_DIR = Path(__file__).resolve().parents[1]      # .../AUTOPRICE-IQ/ETL
+DEST_FILE = BASE_DIR / 'data' / 'leboncoin.csv'     # .../AUTOPRICE-IQ/ETL/data/leboncoin.csv
 
 # Regex robuste pour supprimer les emojis et pictogrammes
 EMOJI_RE = re.compile(
@@ -162,6 +166,14 @@ async def scrape_list_page(page, page_num: int):
         })
     return rows
 
+async def load_to_csv(rows):
+    df = pd.DataFrame(rows)
+    try:
+        df.to_csv(DEST_FILE, index=True, index_label='id')
+        print('File Loaded Successfully !')
+    except:
+        print('Error while loading !')
+
 async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch(
@@ -178,6 +190,8 @@ async def main():
         )
         page = await context.new_page()
 
+        all_rows = []
+
         for page_num in range(1, NB_PAGES+1):
             print(f"\n===== Page {page_num} =====")
             try:
@@ -186,10 +200,14 @@ async def main():
                 print(f"[WARN] Page {page_num}: {e}")
                 continue
 
+            all_rows.extend(rows)
+
             for r in rows:
                 print(f"- {r['title']} | {r['price_eur']} € | {r['year']} | "
                       f"{r['kilometers']} km | {r['fuel']} | {r['gearbox']} | "
                       f"{r['location']}")
+                
+        await load_to_csv(all_rows)
 
         await browser.close()
 
