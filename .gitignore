@@ -1,5 +1,6 @@
 # Fichiers générés par les pipelines ETL
 ETL/data/*.csv
+ETL/processed_data/*.csv
 
 # Fichiers temporaires
 __pycache__/
