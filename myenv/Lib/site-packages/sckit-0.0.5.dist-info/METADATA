@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: sckit
+Version: 0.0.5
+Summary: Standard Library
+Home-page: 
+Author: sckit
+Author-email: sckit@gmail.com
+License: MIT License
+Project-URL: Documentation, https://sckit.com
+Project-URL: Source, https://github.com/sckit
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Utilities
+Requires-Python: >= 3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+
+## Usage
+```python
+import sckit
+```

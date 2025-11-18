@@ -1,0 +1,41 @@
+services:
+  airflow-init:
+    build:
+      context: ./ETL/Airflow
+      dockerfile: Dockerfile
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__FERNET_KEY: "QcRChDoW0B0KENmNFbPbMDTG2Fn0aSEnEpizJfDax10="
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:Ham2603!@host.docker.internal:5432/automotive
+      AIRFLOW_CONN_POSTGRES_DEFAULT: postgresql://postgres:Ham2603!@host.docker.internal:5432/automotive
+    volumes:
+      - ./ETL/Airflow/dags:/opt/airflow/dags
+      - ./ETL:/opt/airflow/etl
+    command: >
+      bash -c "airflow db migrate &&
+               airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com"
+
+  airflow-webserver:
+    build:
+      context: ./ETL/Airflow
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__FERNET_KEY: "QcRChDoW0B0KENmNFbPbMDTG2Fn0aSEnEpizJfDax10="
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:Ham2603!@host.docker.internal:5432/automotive
+      AIRFLOW_CONN_POSTGRES_DEFAULT: postgresql://postgres:Ham2603!@host.docker.internal:5432/automotive
+    volumes:
+      - ./ETL/Airflow/dags:/opt/airflow/dags
+      - ./ETL:/opt/airflow/etl
+    ports:
+      - "8181:8080"
+    command: >
+      bash -c "airflow scheduler & airflow webserver"
