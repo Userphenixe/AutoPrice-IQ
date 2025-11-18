@@ -1,43 +1,51 @@
-from pathlib import Path
 import re
+from pathlib import Path
+
 import pandas as pd
 
-# ---------- Config chemins ----------
-
-BASE_DIR = Path(__file__).resolve().parents[1]          # .../AUTOPRICE-IQ/ETL
+BASE_DIR = Path(__file__).resolve().parents[1]
+# .../AutoPrice-IQ/ETL
 DATA_DIR = BASE_DIR / "data"
 PROCESSED_DIR = BASE_DIR / "processed_data"
-DEST_FILE = PROCESSED_DIR / "auto.csv"
 
-# ---------- Regex / helpers communs ----------
 
-ALLOWED_CHARS_RE = re.compile(r"[^a-zA-Z0-9., ]+")
-
-def clean_title(series: pd.Series) -> pd.Series:
-    """Garde uniquement lettres/chiffres/points/virgules + normalise les espaces."""
+# =========================
+# Helpers génériques
+# =========================
+def clean_title_series(series: pd.Series) -> pd.Series:
+    allowed = re.compile(r'[^a-zA-Z0-9., ]+')
     return (
         series.astype(str)
-        .apply(lambda x: ALLOWED_CHARS_RE.sub("", x))
+        .apply(lambda x: allowed.sub("", x))
         .str.replace(r"\s+", " ", regex=True)
         .str.strip()
     )
 
-def add_marque(series: pd.Series) -> pd.Series:
-    """Crée la marque : 3 premiers mots du titre."""
-    return (
-        series.astype(str)
+
+def add_marque(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    df["marque"] = (
+        df["title"]
+        .astype(str)
         .str.split()
         .apply(lambda mots: " ".join(mots[:3]))
     )
+    return df
 
-def cast_numeric(df: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
-    """Convertit en numérique avec errors='coerce'."""
+def to_numeric(df: pd.DataFrame, cols=("price_eur", "year", "kilometers")) -> pd.DataFrame:
+    df = df.copy()
     for c in cols:
         df[c] = pd.to_numeric(df[c], errors="coerce")
     return df
 
+
+def filter_marque_has_letters(df: pd.DataFrame) -> pd.DataFrame:
+    mask = df["marque"].str.contains(r"[A-Za-z]", regex=True, na=False)
+    return df.loc[mask].copy().reset_index(drop=True)
+
+
 def add_host(df: pd.DataFrame) -> pd.DataFrame:
-    """Host = premier mot de la marque (ex: Renault, BMW…)."""
+    df = df.copy()
     df["host"] = (
         df["marque"]
         .astype(str)
@@ -46,128 +54,45 @@ def add_host(df: pd.DataFrame) -> pd.DataFrame:
     )
     return df
 
-def filter_marque_with_letters(df: pd.DataFrame) -> pd.DataFrame:
-    """Supprime les lignes où la marque ne contient pas de lettres (ex: '307')."""
-    mask = df["marque"].str.contains(r"[A-Za-z]", regex=True, na=False)
-    return df[mask].copy().reset_index(drop=True)
 
-# ---------- Spécifique Leboncoin ----------
+def split_location_column(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
 
-def split_location(loc: str):
-    """
-    Sépare location en (ville, code postale).
-    Ex: 'Metz 57000' -> ('Metz', '57000')
-    """
-    s = str(loc)
-    m = re.search(r"(\d{5})", s)
-    if not m:
-        return pd.Series([s.strip(), None])
-    ville = s[:m.start()].strip()
-    cp = m.group(1)
-    return pd.Series([ville, cp])
+    def split_location(loc):
+        s = str(loc)
+        m = re.search(r"(\d{5})", s)
+        if not m:
+            return pd.Series([s.strip(), None])
+        ville = s[:m.start()].strip()
+        cp = m.group(1)
+        return pd.Series([ville, cp])
 
-def transform_leboncoin(path: Path) -> pd.DataFrame:
-    df = pd.read_csv(path)
-
-    # on retire la colonne id venant du scraping
-    if "id" in df.columns:
-        df = df.drop(columns=["id"])
-
-    # nettoyage du titre + marque
-    df["title"] = clean_title(df["title"])
-    df["marque"] = add_marque(df["title"])
-
-    # numeriques
-    df = cast_numeric(df, ["price_eur", "year", "kilometers"])
-
-    # split ville / code postale à partir de location
     df[["ville", "code postale"]] = df["location"].apply(split_location)
-
-    # filtre marques sans lettres & host
-    df = filter_marque_with_letters(df)
-    df = add_host(df)
-
-    cols_order = [
-        "title",
-        "marque",
-        "host",
-        "year",
-        "kilometers",
-        "price_eur",
-        "fuel",
-        "gearbox",
-        "ville",
-        "code postale",
-        "location",
-    ]
-    return df[cols_order]
+    return df
 
 
-# ---------- Spécifique Aramisauto ----------
-
-def transform_aramisauto(path: Path) -> pd.DataFrame:
-    df = pd.read_csv(path)
-
-    # colonnes inutiles dans ton notebook
-    for col in ["condition", "id", "currency"]:
-        if col in df.columns:
-            df = df.drop(columns=[col])
-
-    df = df.dropna()
-
-    df["title"] = clean_title(df["title"])
-    df["marque"] = add_marque(df["title"])
-
-    df = cast_numeric(df, ["price_eur", "year", "kilometers"])
-    # si certaines années sont NaN, tu peux les drop :
-    df = df.dropna(subset=["year"])
-    df["year"] = df["year"].astype(int)
-
-    df = filter_marque_with_letters(df)
-    df = add_host(df)
-
-    # infos de localisation inexistantes → 'Unknow' comme dans ton code
-    df["location"] = "Unknow"
-    df["ville"] = "Unknow"
-    df["code postale"] = "Unknow"
-
-    cols_order = [
-        "title",
-        "marque",
-        "host",
-        "year",
-        "kilometers",
-        "price_eur",
-        "fuel",
-        "gearbox",
-        "ville",
-        "code postale",
-        "location",
-    ]
-    return df[cols_order]
-
-
-# ---------- Spécifique Autoeasy ----------
-
-def transform_autoeasy(path: Path) -> pd.DataFrame:
-    df = pd.read_csv(path)
+def standardize_columns(df: pd.DataFrame, has_location: bool) -> pd.DataFrame:
+    df = df.copy()
 
     if "id" in df.columns:
         df = df.drop(columns=["id"])
 
-    df = df.dropna()
+    df["title"] = clean_title_series(df["title"])
 
-    df["title"] = clean_title(df["title"])
-    df["marque"] = add_marque(df["title"])
+    df = add_marque(df)
 
-    df = cast_numeric(df, ["price_eur", "year", "kilometers"])
+    df = to_numeric(df)
 
-    df = filter_marque_with_letters(df)
+    df = filter_marque_has_letters(df)
+
     df = add_host(df)
 
-    df["location"] = "Unknow"
-    df["ville"] = "Unknow"
-    df["code postale"] = "Unknow"
+    if has_location:
+        df = split_location_column(df)
+    else:
+        df["location"] = "Unknow"
+        df["ville"] = "Unknow"
+        df["code postale"] = "Unknow"
 
     cols_order = [
         "title",
@@ -182,34 +107,29 @@ def transform_autoeasy(path: Path) -> pd.DataFrame:
         "code postale",
         "location",
     ]
-    return df[cols_order]
+    df = df[cols_order]
+    return df
 
-
-# ---------- Pipeline complet ----------
-
-def build_auto_dataset(
-    leboncoin_path: Path | None = None,
-    aramis_path: Path | None = None,
-    autoeasy_path: Path | None = None,
-    dest_file: Path | None = None,
-) -> Path:
-    """Construit le dataset final et l'enregistre dans processed_data/auto.csv."""
-    leboncoin_path = leboncoin_path or (DATA_DIR / "leboncoin.csv")
-    aramis_path = aramis_path or (DATA_DIR / "aramisauto.csv")
-    autoeasy_path = autoeasy_path or (DATA_DIR / "autoeasy.csv")
-    dest = dest_file or DEST_FILE
-
-    df_leboncoin = transform_leboncoin(leboncoin_path)
-    df_aramis = transform_aramisauto(aramis_path)
-    df_autoeasy = transform_autoeasy(autoeasy_path)
-
-    df_auto = pd.concat([df_leboncoin, df_aramis, df_autoeasy], ignore_index=True)
-
+def run_transform(**context):
+    """
+    Étapes :
+      1. Lire les 3 CSV bruts (leboncoin, aramisauto, autoeasy)
+      2. Standardiser les colonnes (clean, marque, host, numeric, location)
+      3. Concaténer dans un seul DataFrame
+      4. Sauvegarder dans processed_data/auto.csv
+    """
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
-    df_auto.to_csv(dest, index=False)
-    print(f"File downloaded successfully ! ({df_auto.shape[0]} lignes) -> {dest}")
-    return dest
 
+    df_leboncoin_raw = pd.read_csv(DATA_DIR / "leboncoin.csv")
+    df_aramisauto_raw = pd.read_csv(DATA_DIR / "aramisauto.csv")
+    df_autoeasy_raw = pd.read_csv(DATA_DIR / "autoeasy.csv")
 
-if __name__ == "__main__":
-    build_auto_dataset()
+    df_leboncoin = standardize_columns(df_leboncoin_raw, has_location=True)
+    df_aramisauto = standardize_columns(df_aramisauto_raw, has_location=False)
+    df_autoeasy = standardize_columns(df_autoeasy_raw, has_location=False)
+
+    df_auto = pd.concat([df_leboncoin, df_aramisauto, df_autoeasy], ignore_index=True)
+
+    dest_file = PROCESSED_DIR / "auto.csv"
+    df_auto.to_csv(dest_file, index=False)
+    print(f"[TRANSFORM] File saved to: {dest_file}")

@@ -10,6 +10,7 @@ services:
       AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:Ham2603!@host.docker.internal:5432/automotive
       AIRFLOW_CONN_POSTGRES_DEFAULT: postgresql://postgres:Ham2603!@host.docker.internal:5432/automotive
+      PYTHONPATH: /opt/airflow/etl
     volumes:
       - ./ETL/Airflow/dags:/opt/airflow/dags
       - ./ETL:/opt/airflow/etl
@@ -32,6 +33,7 @@ services:
       AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:Ham2603!@host.docker.internal:5432/automotive
       AIRFLOW_CONN_POSTGRES_DEFAULT: postgresql://postgres:Ham2603!@host.docker.internal:5432/automotive
+      PYTHONPATH: /opt/airflow/etl
     volumes:
       - ./ETL/Airflow/dags:/opt/airflow/dags
       - ./ETL:/opt/airflow/etl
