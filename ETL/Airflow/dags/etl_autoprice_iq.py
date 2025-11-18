@@ -42,7 +42,7 @@ default_args = {
 with DAG(
     dag_id="etl_autoprice_iq",
     default_args=default_args,
-    start_date=datetime(2025, 11, 20),
+    start_date=datetime(2025, 11, 22),
     schedule_interval="@daily",
     catchup=False,
     description="ETL AutoPrice-IQ : extract (3 sites) -> transform -> load PostgreSQL",
