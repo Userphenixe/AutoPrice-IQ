@@ -126,6 +126,11 @@ async def scrape_list_page(page, page_num: int):
     await handle_cookies(page)
     await page.wait_for_load_state("networkidle", timeout=60000)
 
+    html = await page.content()
+    if "captcha-delivery.com" in html or "DataDome CAPTCHA" in html:
+        print(f"[ERROR] Leboncoin: CAPTCHA DataDome détecté sur la page {page_num}, scraping impossible.")
+        return []
+
     await page.mouse.wheel(0, 1200)
     await asyncio.sleep(0.2)
 
@@ -173,6 +178,9 @@ async def scrape_list_page(page, page_num: int):
         # lieu
         location = await location_from_card(card)
 
+        if not title and price is None and not year and not km and not location:
+            continue
+
         rows.append(
             {
                 "title": title,
@@ -189,6 +197,8 @@ async def scrape_list_page(page, page_num: int):
 
 def save_rows_to_csv(rows: list[dict], dest_file: Path):
     df = pd.DataFrame(rows)
+    if "title" in df.columns:
+        df = df[df["title"].notna() & (df["title"] != "")]
     dest_file.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(dest_file, index=True, index_label="id")
     print(f"File Loaded Successfully to {dest_file} !")
@@ -244,10 +254,7 @@ def run_leboncoin(nb_pages: int = NB_PAGES, dest_file: Path | str | None = None)
     - dest_file : chemin du CSV de sortie (par défaut DEFAULT_DEST_FILE)
     Retourne le Path du fichier créé.
     """
-    if dest_file is None:
-        dest_path = DEFAULT_DEST_FILE
-    else:
-        dest_path = Path(dest_file)
+    dest_path = DEFAULT_DEST_FILE if dest_file is None else Path(dest_file)
 
     rows = asyncio.run(_async_scrape_leboncoin(nb_pages))
     save_rows_to_csv(rows, dest_path)

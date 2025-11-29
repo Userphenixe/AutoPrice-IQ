@@ -7,7 +7,7 @@ from playwright.async_api import async_playwright, TimeoutError as PWTimeout
 import pandas as pd
 
 BASE = "https://www.aramisauto.com/achat/"
-NB_PAGES = 10
+NB_PAGES = 2
 NBSP = "\u00A0"
 
 # .../AUTOPRICE-IQ/ETL
@@ -247,7 +247,7 @@ async def _async_scrape_aramisauto(nb_pages: int) -> list[dict]:
     """Fonction async centrale : ouvre le navigateur, scrape nb_pages et renvoie les lignes."""
     async with async_playwright() as p:
         browser = await p.chromium.launch(
-            headless=False,
+            headless=True,
             args=["--disable-blink-features=AutomationControlled", "--no-sandbox"],
         )
         context = await browser.new_context(

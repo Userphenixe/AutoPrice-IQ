@@ -32,6 +32,7 @@ def add_marque(df: pd.DataFrame) -> pd.DataFrame:
     )
     return df
 
+
 def to_numeric(df: pd.DataFrame, cols=("price_eur", "year", "kilometers")) -> pd.DataFrame:
     df = df.copy()
     for c in cols:
@@ -71,22 +72,64 @@ def split_location_column(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def _empty_standardized_df(has_location: bool) -> pd.DataFrame:
+    """Retourne un DF vide avec le schéma final attendu."""
+    cols_order = [
+        "title",
+        "marque",
+        "host",
+        "year",
+        "kilometers",
+        "price_eur",
+        "fuel",
+        "gearbox",
+        "ville",
+        "code postale",
+        "location",
+    ]
+    df = pd.DataFrame(columns=cols_order)
+    # Pour les sources sans location, on peut déjà remplir les valeurs par défaut si besoin
+    if not has_location:
+        df["location"] = "Unknow"
+        df["ville"] = "Unknow"
+        df["code postale"] = "Unknow"
+    return df
+
+
 def standardize_columns(df: pd.DataFrame, has_location: bool) -> pd.DataFrame:
     df = df.copy()
 
+    # On supprime la colonne d'index si elle existe
     if "id" in df.columns:
         df = df.drop(columns=["id"])
 
+    # Colonnes minimales attendues en entrée
+    required_cols = ["title", "price_eur", "year", "kilometers", "fuel", "gearbox"]
+    if has_location:
+        required_cols.append("location")
+
+    missing = [c for c in required_cols if c not in df.columns]
+
+    if missing:
+        print(f"[WARN][standardize_columns] Missing columns {missing}, returning empty standardized DF.")
+        return _empty_standardized_df(has_location)
+
+    # Nettoyage du titre
     df["title"] = clean_title_series(df["title"])
 
+    # Ajout de la marque
     df = add_marque(df)
 
+    # Conversion numérique
     df = to_numeric(df)
 
+    # Filtre sur les marques qui contiennent des lettres
     df = filter_marque_has_letters(df)
 
+    # Ajout du host
     df = add_host(df)
 
+    # Gestion de la localisation
     if has_location:
         df = split_location_column(df)
     else:
@@ -110,6 +153,7 @@ def standardize_columns(df: pd.DataFrame, has_location: bool) -> pd.DataFrame:
     df = df[cols_order]
     return df
 
+
 def run_transform(**context):
     """
     Étapes :
@@ -123,6 +167,10 @@ def run_transform(**context):
     df_leboncoin_raw = pd.read_csv(DATA_DIR / "leboncoin.csv")
     df_aramisauto_raw = pd.read_csv(DATA_DIR / "aramisauto.csv")
     df_autoeasy_raw = pd.read_csv(DATA_DIR / "autoeasy.csv")
+
+    print(f"[TRANSFORM] leboncoin_raw shape = {df_leboncoin_raw.shape}, cols = {list(df_leboncoin_raw.columns)}")
+    print(f"[TRANSFORM] aramisauto_raw shape = {df_aramisauto_raw.shape}, cols = {list(df_aramisauto_raw.columns)}")
+    print(f"[TRANSFORM] autoeasy_raw shape = {df_autoeasy_raw.shape}, cols = {list(df_autoeasy_raw.columns)}")
 
     df_leboncoin = standardize_columns(df_leboncoin_raw, has_location=True)
     df_aramisauto = standardize_columns(df_aramisauto_raw, has_location=False)

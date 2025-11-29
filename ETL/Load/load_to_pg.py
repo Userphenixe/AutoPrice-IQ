@@ -4,17 +4,18 @@ import os
 from pathlib import Path
 
 import pandas as pd
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlalchemy.engine import Engine
 
 
-BASE_DIR = Path(__file__).resolve().parents[1] 
+BASE_DIR = Path(__file__).resolve().parents[1]
 # .../AUTOPRICE-IQ/ETL
-DEFAULT_CSV = BASE_DIR / "processed_data" / "auto.csv" 
+DEFAULT_CSV = BASE_DIR / "processed_data" / "auto.csv"
 
 PG_USER = os.getenv("PG_USER", "postgres")
 PG_PASSWORD = os.getenv("PG_PASSWORD", "Ham2603!")
-PG_HOST = os.getenv("PG_HOST", "localhost")
+# même host que dans docker-compose (Airflow DB) → host.docker.internal
+PG_HOST = os.getenv("PG_HOST", "host.docker.internal")
 PG_PORT = os.getenv("PG_PORT", "5432")
 PG_DB = os.getenv("PG_DB", "automotive")
 
@@ -22,8 +23,13 @@ DEFAULT_DB_URL = (
     f"postgresql+psycopg2://{PG_USER}:{PG_PASSWORD}@{PG_HOST}:{PG_PORT}/{PG_DB}"
 )
 
+print(
+    f"[LOAD] Using DB URL: postgresql+psycopg2://{PG_USER}:***@{PG_HOST}:{PG_PORT}/{PG_DB}"
+)
+
 
 # ================== HELPERS SQLALCHEMY ==================
+
 
 def get_engine(db_url: str | None = None) -> Engine:
     """
@@ -37,6 +43,7 @@ def get_engine(db_url: str | None = None) -> Engine:
 
 
 # ================== FONCTIONS DE LOAD ==================
+
 
 def load_dataframe_to_table(
     df: pd.DataFrame,
@@ -99,7 +106,7 @@ def load_csv_to_ads(
 
     if truncate_first:
         with engine.begin() as conn:
-            conn.execute("TRUNCATE TABLE public.ads RESTART IDENTITY;")
+            conn.execute(text("TRUNCATE TABLE public.ads RESTART IDENTITY;"))
         print("Table public.ads tronquée (TRUNCATE + RESTART IDENTITY).")
 
     load_dataframe_to_table(

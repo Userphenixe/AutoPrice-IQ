@@ -239,7 +239,7 @@ async def _async_scrape_autoeasy() -> list[dict]:
     """
     async with async_playwright() as p:
         browser = await p.chromium.launch(
-            headless=False,
+            headless=True,
             args=["--disable-blink-features=AutomationControlled", "--no-sandbox"],
         )
         context = await browser.new_context(
