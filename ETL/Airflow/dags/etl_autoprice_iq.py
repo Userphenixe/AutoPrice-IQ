@@ -10,6 +10,7 @@ from airflow.operators.python import PythonOperator  # type: ignore
 from Extract import aramisauto, autoeasy
 from Transform.transform_auto import run_transform
 from Load.load_to_pg import load_csv_to_ads
+from Data_Quality.deduplicate import call_remove_duplicates
 
 
 # ========= WRAPPERS SYNCHRONES POUR AIRFLOW =========
@@ -28,6 +29,9 @@ def run_transform_task(**context):
 
 def run_load_task(**context):
     load_csv_to_ads(truncate_first=False)
+
+def run_deduplicate_task(**context):
+    call_remove_duplicates()
 
 
 # ================== DÉFINITION DU DAG ==================
@@ -71,5 +75,10 @@ with DAG(
         python_callable=run_load_task,
     )
 
-    # 2 extracts en parallèle -> transform -> load
-    [t_extract_aramisauto, t_extract_autoeasy] >> t_transform >> t_load
+    t_deduplicate = PythonOperator(
+        task_id="Deduplicate_cars_data",
+        python_callable=run_deduplicate_task,
+    )
+
+    # 2 extracts en parallèle -> transform -> load -> deduplication
+    [t_extract_aramisauto, t_extract_autoeasy] >> t_transform >> t_load >> t_deduplicate
